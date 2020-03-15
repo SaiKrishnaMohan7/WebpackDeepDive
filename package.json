@@ -4,10 +4,12 @@
   "description": "A learner project focusing on Webpack",
   "main": "index.js",
   "scripts": {
+    "serve": "webpack-dev-server",
+    "dev": "npm run serve -- --env.mode development",
     "webpack": "webpack",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "build:prod": "npm run webpack -- --env.mode production",
-    "build:dev": "npm run webpack -- --env.mode development --watch",
+    "build:dev": "npm run webpack -- --env.mode development",
     "prod:debug": "npm run debug -- --env.mode production",
     "dev:debug": "npm run debug -- --env.mode development"
   },
@@ -36,6 +38,7 @@
     "workbox-webpack-plugin": "^5.0.0"
   },
   "dependencies": {
-    "d3": "^5.15.0"
+    "d3": "^5.15.0",
+    "webpack-dev-server": "^3.10.3"
   }
 }
