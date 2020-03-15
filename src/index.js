@@ -1,5 +1,5 @@
 import nav from './nav';
-import { top, bottom } from './footer';
+import { footer } from './footer';
 
 // A commonJS defualt export, hence renamed here and Webpack supports interoperability
 // Better to stick to one pattern of importing
@@ -14,4 +14,5 @@ import { makeColorStyle } from './button-styles';
 const button = makeButton('This Button!')
 button.style = makeColorStyle('yellow');
 document.body.appendChild(button);
+document.body.appendChild(footer);
 console.log(nav(), top, bottom, makeColorStyle('yellow'));
