@@ -1,7 +1,9 @@
 // CommonJS module
 
+const buttonNamer = (buttonName) => `Button: ${buttonName}`;
+
 // A commonJS default export
-module.exports = (buttonName) => `Button: ${buttonName}`;
+module.exports = buttonNamer;
 
 /**
  * A commonJS Named Export
@@ -9,5 +11,6 @@ module.exports = (buttonName) => `Button: ${buttonName}`;
  *
  * exports.buttonNamePrinter = buttonName;
  *
+ * Both module.exports and exports point to the same object but using exports is better (Standard and no Overwrites)!
  * helpful: https://www.sitepoint.com/understanding-module-exports-exports-node-js/
  */
