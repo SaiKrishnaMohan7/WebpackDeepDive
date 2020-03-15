@@ -1,3 +1,5 @@
+import './footer.css';
+import './button.css';
 import nav from './nav';
 import { footer } from './footer';
 
