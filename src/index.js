@@ -3,6 +3,7 @@ import './button.css';
 import img from '../img/webpack-logo.jpg';
 // import nav from './nav';
 import { footer } from './footer';
+// import Foo from './foo.ts'; breaks as expected since no .tsconfig
 
 // A commonJS defualt export, hence renamed here and Webpack supports interoperability
 // Better to stick to one pattern of importing
