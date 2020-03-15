@@ -8,6 +8,20 @@ const modeConfig = mode => require(`./config/webpack.${mode}`)(mode);
 // This object is used ot override webpack 4's default behaviours
 module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => merge({
   mode,
+  module: {
+    rules: [
+      {
+        test: /\.jpe?g/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 5000 // only if the image is 5 Kb include it inline or emit to the dist dir and include a hashed url (which is handled by file-loader which is called by url-loader)
+            }
+          }] // good for image assets
+      }
+    ]
+  },
   output: {
     filename: 'bundle.js'
   },
