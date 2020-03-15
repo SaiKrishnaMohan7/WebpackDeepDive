@@ -1,6 +1,7 @@
 import './footer.css';
 import './button.css';
-import nav from './nav';
+import img from '../img/webpack-logo.jpg';
+// import nav from './nav';
 import { footer } from './footer';
 
 // A commonJS defualt export, hence renamed here and Webpack supports interoperability
@@ -12,9 +13,15 @@ import makeButton from './button';
 // This is dead code elimination or Tree Shaking
 // Webpack statically analyses the syntax to figure out what is being used and only builds that
 import { makeColorStyle } from './button-styles';
+import makeImage from './image';
 
 const button = makeButton('This Button!')
 button.style = makeColorStyle('yellow');
 document.body.appendChild(button);
+
+const image = makeImage(img);
+document.body.appendChild(image);
+
 document.body.appendChild(footer);
-console.log(nav(), top, bottom, makeColorStyle('yellow'));
+
+// console.log(img); // base64 encoded image url
