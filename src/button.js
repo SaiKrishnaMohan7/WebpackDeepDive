@@ -8,4 +8,6 @@ module.exports = (buttonName) => `Button: ${buttonName}`;
  * const buttonName = () => 'Le Name';
  *
  * exports.buttonNamePrinter = buttonName;
+ *
+ * helpful: https://www.sitepoint.com/understanding-module-exports-exports-node-js/
  */
