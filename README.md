@@ -60,3 +60,7 @@ Webpack builds a graph with all your dependencies
   - Plugins let you do things that you can't do with loaders
   - Allows you to hook into the entire webpack lifecycle of events
   - Basically, you can write plugins that listen to a certain event in the webpack lifecyle and react to it/handle it
+
+## Webpack Dev Server
+
+Builds bundle.js in memory and hands it over to express via a web socket and hence live reload
