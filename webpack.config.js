@@ -6,10 +6,7 @@ const presetConfig = require('./config/loadPreset');
 
 const modeConfig = mode => require(`./config/webpack.${mode}`)(mode);
 
-// Could use exports but we want to be more specific. Attributing to this link  https://www.sitepoint.com/understanding-module-exports-exports-node-js/
-// This object is used ot override webpack 4's default behaviours
-const webpackConfig = ({ mode, presets } = { mode: 'production', presets: [] }) => merge({
-  mode,
+const webpackBaseConfig = {
   module: {
     rules: [
       {
@@ -31,6 +28,12 @@ const webpackConfig = ({ mode, presets } = { mode: 'production', presets: [] }) 
     new HTMLWebpackPlugin(), // injects all output assets into the HTML file (<script />)
     new ProgressPlugin(),
   ],
+}
+// Could use exports but we want to be more specific. Attributing to this link  https://www.sitepoint.com/understanding-module-exports-exports-node-js/
+// This object is used ot override webpack 4's default behaviours
+const webpackConfig = ({ mode, presets } = { mode: 'production', presets: [] }) => merge({
+  mode,
+  ...webpackBaseConfig
 }, modeConfig(mode), presetConfig({ mode, presets }));
 
 module.exports = webpackConfig;
