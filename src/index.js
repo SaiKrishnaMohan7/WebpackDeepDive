@@ -3,7 +3,7 @@ import './button.css';
 import img from '../img/webpack-logo.jpg';
 // import nav from './nav';
 // import { footer } from './footer';
-const getFooter = () => import('./footer');
+const getFooter = () => import('./footer'); // Static Code split since footer imported by giving exact location
 // import Foo from './foo.ts'; breaks as expected since no .tsconfig
 
 // A commonJS defualt export, hence renamed here and Webpack supports interoperability
@@ -24,10 +24,13 @@ document.body.appendChild(button);
 const image = makeImage(img);
 document.body.appendChild(image);
 
-// Static Code Splitting
+// Static Code Splitting: Could be used for loading in giant libs
 button.addEventListener('click', (e) => {
-  getFooter().then(defaultExportFooterModule => {
-    document.body.appendChild(defaultExportFooterModule.footer);
+  getFooter().then(footerModule => {
+    // footerModule is the whole module and the named exports from the module are available just like import { namedExport } from './moduleName'
+    // Could destructure too!
+    // IF accessing a default export from module: It will me abvailaible in the `default` property of the module object (ex: footerModule.default if it had an default export that we want to Lazy load)
+    document.body.appendChild(footerModule.footer);
   })
 })
 
