@@ -64,3 +64,14 @@ Webpack builds a graph with all your dependencies
 ## Webpack Dev Server
 
 Builds bundle.js in memory and hands it over to express via a web socket and hence live reload
+
+
+## Code Coverage
+
+Chrome dev tools, Cmd + Shift + P, 'Coverage' and relaod the page. [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+
+## Performance Goals
+
+- <= 200kb - Initial JS code
+- <= 100kb - Initial CSS
+- 90% code coverage
