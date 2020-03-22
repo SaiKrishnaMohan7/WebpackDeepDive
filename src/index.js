@@ -2,7 +2,8 @@ import './footer.css';
 import './button.css';
 import img from '../img/webpack-logo.jpg';
 // import nav from './nav';
-import { footer } from './footer';
+// import { footer } from './footer';
+const getFooter = () => import('./footer');
 // import Foo from './foo.ts'; breaks as expected since no .tsconfig
 
 // A commonJS defualt export, hence renamed here and Webpack supports interoperability
@@ -23,6 +24,11 @@ document.body.appendChild(button);
 const image = makeImage(img);
 document.body.appendChild(image);
 
-document.body.appendChild(footer);
+// Static Code Splitting
+button.addEventListener('click', (e) => {
+  getFooter().then(defaultExportFooterModule => {
+    document.body.appendChild(defaultExportFooterModule.footer);
+  })
+})
 
 // console.log(img); // base64 encoded image url
