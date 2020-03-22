@@ -75,3 +75,7 @@ Chrome dev tools, Cmd + Shift + P, 'Coverage' and relaod the page. [Coverage](ht
 - <= 200kb - Initial JS code
 - <= 100kb - Initial CSS
 - 90% code coverage
+
+## Code Splitting
+
+Separate chunks of JS that will be loaded only asynchronously. Created at build time.
