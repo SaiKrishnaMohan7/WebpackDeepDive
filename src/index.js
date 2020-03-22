@@ -30,6 +30,7 @@ button.addEventListener('click', (e) => {
     // footerModule is the whole module and the named exports from the module are available just like import { namedExport } from './moduleName'
     // Could destructure too!
     // IF accessing a default export from module: It will me abvailaible in the `default` property of the module object (ex: footerModule.default if it had an default export that we want to Lazy load)
+    // https://javascript.info/modules-dynamic-imports
     document.body.appendChild(footerModule.footer);
   })
 })
