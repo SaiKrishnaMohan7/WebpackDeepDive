@@ -1,3 +1,5 @@
+// Webpack config file should always be at the top level, good practice
+
 const { ProgressPlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
