@@ -3,7 +3,9 @@ import './button.css';
 import img from '../img/webpack-logo.jpg';
 // import nav from './nav';
 // import { footer } from './footer';
-const getFooter = () => import('./footer'); // Static Code split since footer imported by giving exact location
+
+const getFooter = () => import(/* webpackChunkName: "footer" */'./footer'); // Static Code split since footer imported by giving exact location
+
 // const getButton = fileName => import(`./${fileName}`); "Dynamic" Code splitting, Static Path + Expression
 
 // import Foo from './foo.ts'; breaks as expected since no .tsconfig
