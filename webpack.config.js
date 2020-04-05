@@ -22,7 +22,8 @@ const webpackBaseConfig = {
     ]
   },
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    chunkFilename: '[name].lazy-load-chunk.js',
   },
   plugins: [
     new HTMLWebpackPlugin(), // injects all output assets into the HTML file (<script />)
