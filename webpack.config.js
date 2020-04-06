@@ -4,6 +4,7 @@ const { ProgressPlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 
+const FirstWebpackPlugin = require('./config/FirstWebpackPlugin');
 const presetConfig = require('./config/loadPreset');
 
 const modeConfig = mode => require(`./config/webpack.${mode}`)(mode);
@@ -30,6 +31,7 @@ const webpackBaseConfig = {
   plugins: [
     new HTMLWebpackPlugin(), // injects all output assets into the HTML file (<script />)
     new ProgressPlugin(),
+    new FirstWebpackPlugin(),
   ],
 }
 // Could use exports but we want to be more specific. Attributing to this link  https://www.sitepoint.com/understanding-module-exports-exports-node-js/
